@@ -114,6 +114,7 @@ echo "Kaynak: gomulu paket"
 
 # ---- eski v1 (filecracker-gpu) kalintilarini temizle ----
 $SUDO rm -rf /usr/lib/filecracker-gpu \
+  /usr/bin/filecracker-gpu \
   /usr/share/applications/filecracker-gpu.desktop \
   /usr/share/icons/hicolor/scalable/apps/filecracker-gpu.svg \
   "$HOME/Masaüstü/filecracker-gpu.desktop" "$HOME/Desktop/filecracker-gpu.desktop" 2>/dev/null || true
@@ -128,7 +129,6 @@ $SUDO install -Dm644 "$PROJE/filecracker.svg" /usr/share/icons/hicolor/scalable/
 $SUDO install -Dm644 "$PROJE/filecracker.desktop" /usr/share/applications/filecracker.desktop
 printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' | $SUDO tee "$BIN" >/dev/null
 $SUDO chmod 755 "$BIN"
-$SUDO ln -sf filecracker /usr/bin/filecracker-gpu || true
 $SUDO ln -sf filecracker /usr/bin/pdfcracker || true
 fi
 

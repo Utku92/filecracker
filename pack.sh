@@ -21,7 +21,6 @@ cp "$SRC/README.md" "$D/usr/share/doc/filecracker/"
 cp "$SRC/LICENSE" "$D/usr/share/doc/filecracker/copyright"
 printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' > "$D/usr/bin/filecracker"
 chmod 755 "$D/usr/bin/filecracker" "$D/usr/lib/filecracker/filecracker.py"
-ln -s filecracker "$D/usr/bin/filecracker-gpu"
 ln -s filecracker "$D/usr/bin/pdfcracker"
 cat > "$D/DEBIAN/control" <<EOF
 Package: filecracker
@@ -89,7 +88,6 @@ install -Dm644 README.md %{buildroot}%{_docdir}/%{name}/README.md
 mkdir -p %{buildroot}%{_bindir}
 printf '#!/bin/sh\\nexec python3 %{_libdir}/filecracker/filecracker.py "\$@"\\n' > %{buildroot}%{_bindir}/filecracker
 chmod 755 %{buildroot}%{_bindir}/filecracker
-ln -s filecracker %{buildroot}%{_bindir}/filecracker-gpu
 ln -s filecracker %{buildroot}%{_bindir}/pdfcracker
 
 %post
@@ -100,7 +98,6 @@ exit 0
 %files
 %{_libdir}/filecracker/
 %{_bindir}/filecracker
-%{_bindir}/filecracker-gpu
 %{_bindir}/pdfcracker
 %{_datadir}/icons/hicolor/scalable/apps/filecracker.svg
 %{_datadir}/applications/filecracker.desktop

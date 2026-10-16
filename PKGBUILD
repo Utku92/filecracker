@@ -29,6 +29,5 @@ package() {
   printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' > "$pkgdir/usr/bin/filecracker"
   chmod 755 "$pkgdir/usr/bin/filecracker"
   # backward compat with v1
-  ln -s filecracker "$pkgdir/usr/bin/filecracker-gpu"
   ln -s filecracker "$pkgdir/usr/bin/pdfcracker"
 }
