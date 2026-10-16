@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QIcon
 from PyQt6.QtWidgets import (
     QApplication, QComboBox, QFileDialog, QHBoxLayout, QLabel, QMainWindow,
     QMessageBox, QPlainTextEdit, QPushButton, QVBoxLayout, QWidget,
@@ -159,6 +159,16 @@ def run_2john(cmd):
         except Exception as e:
             return None, str(e)
     return r, ""
+
+
+def app_icon():
+    """Pencere sol-ust simgesi: kurulu ikon, yoksa proje yanindaki svg."""
+    base = os.path.dirname(os.path.abspath(__file__))
+    for p in ("/usr/share/icons/hicolor/scalable/apps/filecracker.svg",
+              os.path.join(base, "filecracker.svg")):
+        if os.path.isfile(p):
+            return QIcon(p)
+    return QIcon()
 
 
 def ensure_wordlist():
@@ -903,6 +913,7 @@ class MainWindow(QMainWindow):
     def __init__(self, start_file=""):
         super().__init__()
         self.setWindowTitle(APP_NAME)
+        self.setWindowIcon(app_icon())
         self.resize(700, 640)
         self.setMinimumSize(480, 380)
         self.target_path = ""
