@@ -950,7 +950,8 @@ class MainWindow(QMainWindow):
         row = QHBoxLayout()
         self.btn_pick = QPushButton("Choose File...")
         self.btn_pick.clicked.connect(self.pick_file)
-        self.btn_start = QPushButton("Crack with GPU")
+        self.btn_start = QPushButton("Start")
+        self.btn_start.setToolTip("Start recovery with the selected mode")
         self.btn_start.clicked.connect(self.start)
         self.btn_stop = QPushButton("Stop")
         self.btn_stop.clicked.connect(self.stop)
@@ -1025,9 +1026,9 @@ class MainWindow(QMainWindow):
         self.target_path = path
         kind = file_kind(path)
         self.lbl_file.setText(f"File: {path}  [{kind}]")
-        self.drop.setText(f"Selected [{kind}]:\n{os.path.basename(path)}\n\nYou can drop another file")
+        self.drop.setText(f"Selected [{kind}]:\n{os.path.basename(path)}\n\nPress Start to begin, or drop another file")
         self.log.appendPlainText(f"Selected [{kind}]: {path}")
-        self.start()
+        self.lbl_status.setText("Ready. Press Start to begin.")
 
     def start(self):
         if not self.target_path:
