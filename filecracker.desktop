@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=File Cracker (GPU)
+Name=File Cracker
 GenericName=Document and Archive Password Recovery
 Comment=Recover passwords from PDF, Office, ZIP, RAR, 7Z with all GPUs (hashcat)
-Exec=filecracker-gpu
-Icon=filecracker-gpu
+Exec=filecracker
+Icon=filecracker
 Terminal=false
 Type=Application
 Categories=Utility;Security;

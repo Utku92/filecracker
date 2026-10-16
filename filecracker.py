@@ -32,7 +32,7 @@ QPDF = shutil.which("qpdf") or "/usr/bin/qpdf"
 SEVENZ = shutil.which("7z") or shutil.which("7zz") or "/usr/bin/7z"
 UNRAR = shutil.which("unrar") or "/usr/bin/unrar"
 
-APP_NAME = "File Cracker (GPU)"
+APP_NAME = "File Cracker"
 
 COMMON_PASSWORDS = """123456
 123456789
@@ -904,6 +904,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle(APP_NAME)
         self.resize(700, 640)
+        self.setMinimumSize(480, 380)
         self.target_path = ""
         self.worker = None
         self.wordlist = ""
@@ -943,9 +944,15 @@ class MainWindow(QMainWindow):
         self.btn_stop = QPushButton("Stop")
         self.btn_stop.clicked.connect(self.stop)
         self.btn_stop.setEnabled(False)
+        self.btn_log = QPushButton("Günlük ▾")
+        self.btn_log.setCheckable(True)
+        self.btn_log.setChecked(True)
+        self.btn_log.setToolTip("Günlük panelini daralt/genişlet")
+        self.btn_log.clicked.connect(self.toggle_log)
         row.addWidget(self.btn_pick)
         row.addWidget(self.btn_start)
         row.addWidget(self.btn_stop)
+        row.addWidget(self.btn_log)
         lay.addLayout(row)
 
         self.lbl_file = QLabel("File: none")
@@ -1036,6 +1043,15 @@ class MainWindow(QMainWindow):
         if self.worker and self.worker.isRunning():
             self.worker.stop()
             self.lbl_status.setText("Stopping...")
+
+    def toggle_log(self):
+        show = self.btn_log.isChecked()
+        self.log.setVisible(show)
+        self.btn_log.setText("Günlük ▾" if show else "Günlük ▸")
+        if not show:
+            self.resize(self.width(), 340)
+        else:
+            self.resize(self.width(), max(self.height(), 560))
 
     def on_done(self):
         self.btn_start.setEnabled(True)

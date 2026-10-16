@@ -41,29 +41,29 @@ bilinmeyen güçlü şifre saatler/günler sürebilir. Bu normaldir.
 
 ### Tek dosya kurulum (tüm Linux, Masaüstü)
 
-Masaüstündeki `filecracker-gpu-kur.sh` Arch/CachyOS, Debian/Ubuntu,
+Masaüstündeki `filecracker-kur.sh` Arch/CachyOS, Debian/Ubuntu,
 Fedora ve openSUSE'yi otomatik tanır:
 
 ```bash
-bash ~/Masaüstü/filecracker-gpu-kur.sh
+bash ~/Masaüstü/filecracker-kur.sh
 ```
 
 ### Arch / CachyOS (AUR)
 
 ```bash
-yay -S filecracker-gpu
-filecracker-gpu
+yay -S filecracker
+filecracker
 ```
 
 Eski `pdfcracker` paketiyle çakışır (yerine geçer); `pdfcracker` komutu simlink olarak kalır.
 
 ## Tek dosya kurulum (Masaüstü)
 
-Masaüstündeki `filecracker-gpu-kur.sh` tek dosyadır: bağımlılıkları kurar,
+Masaüstündeki `filecracker-kur.sh` tek dosyadır: bağımlılıkları kurar,
 uygulamayı, simgeyi ve kısayolu yükler.
 
 ```bash
-bash ~/Masaüstü/filecracker-gpu-kur.sh
+bash ~/Masaüstü/filecracker-kur.sh
 ```
 
 ## Gereksinimler
