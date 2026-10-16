@@ -48,6 +48,21 @@ Fedora ve openSUSE'yi otomatik tanır:
 bash ~/Masaüstü/filecracker-kur.sh
 ```
 
+### Debian / Ubuntu (.deb)
+
+```bash
+sudo apt install ./filecracker_2.0.0_all.deb
+filecracker
+```
+
+### Fedora / openSUSE (.rpm)
+
+```bash
+sudo dnf install ./filecracker-2.0.0-1.noarch.rpm   # Fedora
+sudo zypper install ./filecracker-2.0.0-1.noarch.rpm # openSUSE
+filecracker
+```
+
 ### Arch / CachyOS (AUR)
 
 ```bash
