@@ -112,7 +112,16 @@ if [[ ! -f "$PROJE/filecracker.py" ]]; then
 fi
 echo "Kaynak: gomulu paket"
 
+# ---- eski v1 (filecracker-gpu) kalintilarini temizle ----
+$SUDO rm -rf /usr/lib/filecracker-gpu \
+  /usr/share/applications/filecracker-gpu.desktop \
+  /usr/share/icons/hicolor/scalable/apps/filecracker-gpu.svg \
+  "$HOME/Masaüstü/filecracker-gpu.desktop" "$HOME/Desktop/filecracker-gpu.desktop" 2>/dev/null || true
+
 # ---- dosyalar ----
+if pacman -Q filecracker >/dev/null 2>&1; then
+  echo "AUR paketi zaten kurulu -> dosyalari ezmiyorum (db tutarli kalir)."
+else
 $SUDO install -Dm755 "$PROJE/filecracker.py" "$LIB/filecracker.py"
 $SUDO install -Dm644 "$PROJE/common-passwords.txt" "$LIB/common-passwords.txt"
 $SUDO install -Dm644 "$PROJE/filecracker.svg" /usr/share/icons/hicolor/scalable/apps/filecracker.svg
@@ -121,6 +130,7 @@ printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' | $S
 $SUDO chmod 755 "$BIN"
 $SUDO ln -sf filecracker /usr/bin/filecracker-gpu || true
 $SUDO ln -sf filecracker /usr/bin/pdfcracker || true
+fi
 
 # ---- masaustu kisayolu ----
 for MD in "/home/$USER/Masaüstü" "/home/$USER/Desktop" "$HOME/Desktop"; do
