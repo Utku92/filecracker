@@ -1,5 +1,7 @@
 # File Cracker (GPU)
 
+![File Cracker](screenshot.png)
+
 Tek tıkla evrensel şifre kurtarma aracı. **Tüm GPU'ları** kullanır (NVIDIA + AMD + Intel, hashcat'e `-d` kısıtı verilmez).
 
 One-click universal password recovery. Uses **ALL GPUs** (NVIDIA + AMD + Intel, no `-d` limit to hashcat).

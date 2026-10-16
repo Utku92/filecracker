@@ -18,6 +18,7 @@ cp "$SRC/filecracker.py" "$SRC/common-passwords.txt" "$D/usr/lib/filecracker/"
 cp "$SRC/filecracker.svg" "$D/usr/share/icons/hicolor/scalable/apps/filecracker.svg"
 cp "$SRC/filecracker.desktop" "$D/usr/share/applications/"
 cp "$SRC/README.md" "$D/usr/share/doc/filecracker/"
+cp "$SRC/screenshot.png" "$D/usr/share/doc/filecracker/"
 cp "$SRC/LICENSE" "$D/usr/share/doc/filecracker/copyright"
 printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' > "$D/usr/bin/filecracker"
 chmod 755 "$D/usr/bin/filecracker" "$D/usr/lib/filecracker/filecracker.py"
@@ -85,6 +86,7 @@ install -Dm644 filecracker.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/ap
 install -Dm644 filecracker.desktop %{buildroot}%{_datadir}/applications/filecracker.desktop
 install -Dm644 LICENSE %{buildroot}%{_licensedir}/%{name}/LICENSE
 install -Dm644 README.md %{buildroot}%{_docdir}/%{name}/README.md
+install -Dm644 screenshot.png %{buildroot}%{_docdir}/%{name}/screenshot.png
 mkdir -p %{buildroot}%{_bindir}
 printf '#!/bin/sh\\nexec python3 %{_libdir}/filecracker/filecracker.py "\$@"\\n' > %{buildroot}%{_bindir}/filecracker
 chmod 755 %{buildroot}%{_bindir}/filecracker
@@ -103,6 +105,7 @@ exit 0
 %{_datadir}/applications/filecracker.desktop
 %license %{_licensedir}/%{name}/LICENSE
 %doc %{_docdir}/%{name}/README.md
+%doc %{_docdir}/%{name}/screenshot.png
 
 %changelog
 * Fri Oct 16 2026 Utku92 - 2.0.0-1

@@ -25,6 +25,7 @@ package() {
   install -Dm644 filecracker.desktop "$pkgdir/usr/share/applications/filecracker.desktop"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 screenshot.png "$pkgdir/usr/share/doc/$pkgname/screenshot.png"
   install -dm755 "$pkgdir/usr/bin"
   printf '#!/bin/sh\nexec python3 /usr/lib/filecracker/filecracker.py "$@"\n' > "$pkgdir/usr/bin/filecracker"
   chmod 755 "$pkgdir/usr/bin/filecracker"
