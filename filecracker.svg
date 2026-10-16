@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b4a7a"/>
+      <stop offset="1" stop-color="#101f36"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d7e0ec"/>
+    </linearGradient>
+    <linearGradient id="lock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd75e"/>
+      <stop offset="1" stop-color="#e09b00"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="48" fill="url(#bg)"/>
+  <!-- PDF doc (left) -->
+  <g>
+    <path d="M34 66 h40 l18 18 v76 a6 6 0 0 1 -6 6 h-52 a6 6 0 0 1 -6 -6 v-88 a6 6 0 0 1 6 -6 z" fill="url(#page)"/>
+    <path d="M74 66 v18 h18 z" fill="#9fb4cc"/>
+    <rect x="28" y="138" width="64" height="20" fill="#c0392b"/>
+    <text x="60" y="153" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">PDF</text>
+  </g>
+  <!-- Office doc (middle) -->
+  <g>
+    <path d="M100 60 h40 l18 18 v82 a6 6 0 0 1 -6 6 h-52 a6 6 0 0 1 -6 -6 v-94 a6 6 0 0 1 6 -6 z" fill="url(#page)"/>
+    <path d="M140 60 v18 h18 z" fill="#9fb4cc"/>
+    <rect x="94" y="138" width="64" height="20" fill="#2471a3"/>
+    <text x="126" y="153" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">DOC</text>
+  </g>
+  <!-- Archive box (right) -->
+  <g>
+    <rect x="164" y="66" width="62" height="72" rx="6" fill="#f5b041" stroke="#7e5109" stroke-width="3"/>
+    <rect x="164" y="66" width="62" height="20" rx="6" fill="#7e5109"/>
+    <rect x="186" y="60" width="18" height="12" rx="3" fill="#7e5109"/>
+    <text x="195" y="132" font-family="sans-serif" font-size="15" font-weight="bold" fill="#4a2f00" text-anchor="middle">ZIP</text>
+  </g>
+  <!-- open padlock -->
+  <g>
+    <path d="M96 184 v-10 a24 24 0 0 1 48 0 v5" fill="none" stroke="url(#lock)" stroke-width="11" stroke-linecap="round"/>
+    <rect x="86" y="180" width="68" height="52" rx="11" fill="url(#lock)" stroke="#8a5f00" stroke-width="3"/>
+    <circle cx="120" cy="201" r="8" fill="#5a3d00"/>
+    <rect x="116.5" y="203" width="7" height="14" rx="3.5" fill="#5a3d00"/>
+  </g>
+  <!-- GPU lightning bolt -->
+  <path d="M182 176 l-26 34 h16 l-6 26 26 -34 h-16 z" fill="#4df0ff" stroke="#0b6b78" stroke-width="3" stroke-linejoin="round"/>
+</svg>
