@@ -98,6 +98,16 @@ Conflicts with (replaces) the old `pdfcracker` package; the `pdfcracker` command
 | RAR5 | GPU 13000 | john RAR5 |
 | 7Z | GPU 11600 | john 7z |
 
+## VirusTotal
+
+Scanned on [VirusTotal](https://www.virustotal.com):
+
+| File | SHA256 | Report |
+|---|---|---|
+| `filecracker_2.0.0_debian-ubuntu-mint.deb` | `0e1824c6b0394bde2c668de7ff60c9eec6b888d13e52368b5dfeab49f5c88d44` | [virustotal.com/gui/file/0e1824c...](https://www.virustotal.com/gui/file/0e1824c6b0394bde2c668de7ff60c9eec6b888d13e52368b5dfeab49f5c88d44) |
+| `filecracker_2.0.0_fedora-opensuse.rpm` | `688a2c30dbf911ad0cc95201e5c2b3cab2b1c2b693d6e3633863f11e818f377d` | [virustotal.com/gui/file/688a2c3...](https://www.virustotal.com/gui/file/688a2c30dbf911ad0cc95201e5c2b3cab2b1c2b693d6e3633863f11e818f377d) |
+| `filecracker_2.0.0_all-linux.sh` | `37e3cec33e9b38f60f5e744b7ea53c5249e05238fe7a6f6698e8b73f7448dc95` | [virustotal.com/gui/file/37e3cec...](https://www.virustotal.com/gui/file/37e3cec33e9b38f60f5e744b7ea53c5249e05238fe7a6f6698e8b73f7448dc95) |
+
 ## License
 
 MIT
