@@ -2,6 +2,8 @@
 
 ![File Cracker](screenshot.png)
 
+![File Cracker 2](screenshot1.png)
+
 One-click universal password recovery. Uses **ALL GPUs** (NVIDIA + AMD + Intel, no `-d` limit passed to hashcat).
 
 ## Supported files
@@ -86,7 +88,7 @@ Conflicts with (replaces) the old `pdfcracker` package; the `pdfcracker` command
 - `filecracker.svg` — icon (PDF + DOC + ZIP + open lock + GPU spark)
 - `filecracker.desktop` — menu/shortcut entry
 - `common-passwords.txt` — built-in wordlist
-- `screenshot.png` — app screenshot (this README)
+- `screenshot.png`, `screenshot1.png` — app screenshots (this README)
 
 ## Test (2x RTX 3090, 5/5 in Auto and CPU modes)
 
