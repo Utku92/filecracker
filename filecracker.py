@@ -62,10 +62,10 @@ welcome
 admin
 admin123
 test123
-deneme
-deneme123
-sifre123
-belge123
+testing
+testing123
+secret123
+document123
 pdf123
 zip123
 rar123
@@ -162,7 +162,7 @@ def run_2john(cmd):
 
 
 def app_icon():
-    """Pencere sol-ust simgesi: kurulu ikon, yoksa proje yanindaki svg."""
+    """Window top-left icon: installed icon, else the svg next to the project."""
     base = os.path.dirname(os.path.abspath(__file__))
     for p in ("/usr/share/icons/hicolor/scalable/apps/filecracker.svg",
               os.path.join(base, "filecracker.svg")):
@@ -955,10 +955,10 @@ class MainWindow(QMainWindow):
         self.btn_stop = QPushButton("Stop")
         self.btn_stop.clicked.connect(self.stop)
         self.btn_stop.setEnabled(False)
-        self.btn_log = QPushButton("Günlük ▾")
+        self.btn_log = QPushButton("Log ▾")
         self.btn_log.setCheckable(True)
         self.btn_log.setChecked(True)
-        self.btn_log.setToolTip("Günlük panelini daralt/genişlet")
+        self.btn_log.setToolTip("Collapse/expand the log panel")
         self.btn_log.clicked.connect(self.toggle_log)
         row.addWidget(self.btn_pick)
         row.addWidget(self.btn_start)
@@ -1058,7 +1058,7 @@ class MainWindow(QMainWindow):
     def toggle_log(self):
         show = self.btn_log.isChecked()
         self.log.setVisible(show)
-        self.btn_log.setText("Günlük ▾" if show else "Günlük ▸")
+        self.btn_log.setText("Log ▾" if show else "Log ▸")
         if not show:
             self.resize(self.width(), 340)
         else:

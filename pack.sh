@@ -55,7 +55,7 @@ echo "== .rpm =="
 R=/tmp/fc-rpmbuild
 mkdir -p "$R"/{BUILD,RPMS,SRPMS,SOURCES,SPECS}
 tar -czf "$R/SOURCES/filecracker-$VER.tar.gz" -C "$SRC" \
-  filecracker.py common-passwords.txt filecracker.svg filecracker.desktop README.md LICENSE
+  filecracker.py common-passwords.txt filecracker.svg filecracker.desktop README.md screenshot.png LICENSE
 cat > "$R/SPECS/filecracker.spec" <<EOF
 Name:           filecracker
 Version:        $VER
@@ -114,7 +114,7 @@ EOF
 rpmbuild --define "_topdir $R" -bb "$R/SPECS/filecracker.spec" >/tmp/fc-rpm.log 2>&1 || { tail -20 /tmp/fc-rpm.log; exit 1; }
 find "$R/RPMS" -name "*.rpm" -exec cp {} "$DIST/" \;
 echo "rpm ok: $(du -h "$DIST"/*.rpm | cut -f1)"
-echo "== tek dosya kurulum (gomulu) =="
+echo "== single-file installer (embedded) =="
 cp "$SRC/setup-template.sh" "$DIST/filecracker-kur.sh"
 tar -czf - -C "$SRC" filecracker.py common-passwords.txt filecracker.svg filecracker.desktop | base64 >> "$DIST/filecracker-kur.sh"
 chmod +x "$DIST/filecracker-kur.sh"
