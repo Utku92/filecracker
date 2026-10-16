@@ -114,5 +114,10 @@ EOF
 rpmbuild --define "_topdir $R" -bb "$R/SPECS/filecracker.spec" >/tmp/fc-rpm.log 2>&1 || { tail -20 /tmp/fc-rpm.log; exit 1; }
 find "$R/RPMS" -name "*.rpm" -exec cp {} "$DIST/" \;
 echo "rpm ok: $(du -h "$DIST"/*.rpm | cut -f1)"
+echo "== tek dosya kurulum (gomulu) =="
+cp "$SRC/setup-template.sh" "$DIST/filecracker-kur.sh"
+tar -czf - -C "$SRC" filecracker.py common-passwords.txt filecracker.svg filecracker.desktop | base64 >> "$DIST/filecracker-kur.sh"
+chmod +x "$DIST/filecracker-kur.sh"
+echo "setup ok: $(du -h "$DIST/filecracker-kur.sh" | cut -f1)"
 rm -rf /tmp/fc-deb /tmp/fc-rpmbuild
 echo "== dist =="; ls -la "$DIST"
